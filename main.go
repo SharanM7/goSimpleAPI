@@ -36,7 +36,8 @@ type book struct {
 var books []book
 var mysqlCon *sql.DB
 
- var mysqlHostString string = "testUser:test@/testdb"
+var mysqlHostString string = "testUser:test@/testdb"
+
 //var mysqlHostString string = "testUser:asdfG!@345@/testdb"
 
 func main() {

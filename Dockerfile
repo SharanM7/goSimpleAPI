@@ -1,14 +1,15 @@
-From golang:latest
+FROM golang:latest
 
-RUN mkdir /build
-WORKDIR /build
+RUN mkdir /app
+ADD . /app
+WORKDIR /app
 
-RUN export GO111MODULE=on
-RUN go get github.com/SharanM7/goSimpleAPI
-RUN cd /build && git clone https://github.com/SharanM7/goSimpleAPI.git
+# RUN export GO111MODULE=on
+# RUN go get github.com/SharanM7/goSimpleAPI
+# RUN git clone https://github.com/SharanM7/goSimpleAPI.git
 
-RUN cd /build/main && go build
+RUN go build main.go 
 
-EXPOSE 8090
+# EXPOSE 8090
 
-ENTRYPOINT ["/build/main"]
+CMD ["/app/main"]
